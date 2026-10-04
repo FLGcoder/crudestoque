@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $preco_float = (float)$preco;
         $qtd_int = (int)$quantidade;
-        $stmt->bind_param("sssdis", $nome, $categoria, $descricao, $preco_float, $qtd_int, $data_validade);]
+        $stmt->bind_param("sssdis", $nome, $categoria, $descricao, $preco_float, $qtd_int, $data_validade);
 
         if ($stmt->execute()) {
             header("Location: listar-produto.php");
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </ul>
     <?php } ?>
 
-    form method="POST" action="">
+    <form method="POST" action="">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($nome); ?>"><br><br>
 
@@ -99,6 +99,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <input type="date" id="data_validade" name="data_validade" value="<?php echo htmlspecialchars($data_validade); ?>"><br><br>
 
         <input type="submit" value="Cadastrar">
-    
+        <a href="listar-produto.php">Voltar</a>
+    </form>
+
 </body>
-    </html>
+</html>
